@@ -603,7 +603,7 @@ void c_bridge(Character cbridge, Day_info c_bridge, c_maps mbridge)
     }while((option != "1") || (option != "2") || (option != "3") || (option != "4"));
 
 }
-
+s
 
 
 
