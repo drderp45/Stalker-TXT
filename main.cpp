@@ -4,9 +4,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "Classes.h"
+
+#include "declarations.h"
+
+#include "Character_Stats.h"
+#include "Day_Stats.h"
+#include "Cordon_map.h"
 
 void logo();
+void ClearScreen();
+void help();
 
 int main(int argc, char *argv[])
 {
@@ -121,6 +128,26 @@ void logo()
 
 }
 
+void ClearScreen()
+{
+    system("cls");
+}
+
+void help()
+{
+    std::cout << "Number 1 = North\n";
+    std::cout << "Number 2 = South\n";
+    std::cout << "Number 3 = East\n";
+    std::cout << "Number 4 = West\n";
+}
+
+
+/*
+ 1=n
+ 2=s
+ 3=w
+ 4=e
+    */
 
 
 
