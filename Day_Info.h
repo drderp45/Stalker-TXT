@@ -1,10 +1,9 @@
-#ifndef DAY_STATS_H
-#define DAY_STATS_H
+#ifndef DAY_INFO_H
+#define DAY_INFO_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 
 class Day_info {
 public:
@@ -15,6 +14,7 @@ public:
     int pos;
     int weath;
     int tim;
+    int day;
     char f;
 
     void set_random()
@@ -46,7 +46,7 @@ public:
             std::cout << "Weather Error.....";
         }
 
-        tim = 1; // Time of day
+        tim = day; // Time of day
 
         switch(tim){
         case 1:
@@ -55,10 +55,10 @@ public:
         case 2:
             time_s = "Midday";
             break;
-        case 4:
+        case 3:
             time_s = "Afternoon";
             break;
-        case 5:
+        case 4:
             time_s = "Midnight";
             break;
         default:
@@ -73,4 +73,4 @@ public:
     }
 };
 
-#endif // DAY_STATS_H
+#endif // DAY_INFO_H

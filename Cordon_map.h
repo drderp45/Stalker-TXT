@@ -1,6 +1,8 @@
 #ifndef CORDON_MAP_H
 #define CORDON_MAP_H
 
+#include "Day_Info.h"
+
 class c_maps {
 public:
     int p,i,o,g,h;
@@ -141,6 +143,17 @@ void Cordon(Character &cordon, Day_info &cor, c_maps &c_mp)
 {
     std::string option;
 
+    cor.pos++;
+
+    if(cor.pos % 5 == 0)
+    {
+        cor.set_random();
+        cor.day++;
+    }
+
+    if(cor.day == 5)
+         cor.day = 1;
+
     do{
 
         ClearScreen();
@@ -150,11 +163,10 @@ void Cordon(Character &cordon, Day_info &cor, c_maps &c_mp)
         c_mp.o = 6;
         c_mp.set_cordon_roads();
 
+        cor.initial_stats();
         cor.show_day_ui();
 
         c_mp.show_roads();
-
-        std::string option;
 
         for(int i=0;i<5;i++) { std::cout << "\n"; };
 
@@ -163,6 +175,7 @@ void Cordon(Character &cordon, Day_info &cor, c_maps &c_mp)
         std::cout << "\t\tEast: Road Section 2\t";
         std::cout << "West: Sidorivichs Shop";
         std::cout << "\n\n";
+
 
         cordon.show_char_ui();
 
@@ -182,6 +195,17 @@ void c_lane(Character c_roadm, Day_info c_road_m, c_maps mapsc1)
 {
     std::string option;
 
+    c_road_m.pos++;
+
+    if(c_road_m.pos % 5 == 0)
+    {
+        c_road_m.set_random();
+        c_road_m.day++;
+    }
+
+    if(c_road_m.day == 5)
+         c_road_m.day = 1;
+
     do{
 
         ClearScreen();
@@ -191,6 +215,7 @@ void c_lane(Character c_roadm, Day_info c_road_m, c_maps mapsc1)
         mapsc1.o = 5;
         mapsc1.set_cordon_roads();
 
+        c_road_m.initial_stats();
         c_road_m.show_day_ui();
 
         mapsc1.show_roads();
@@ -221,6 +246,17 @@ void c_road_sect_1(Character road1, Day_info croad1, c_maps map1)
 
     std::string option;
 
+    croad1.pos++;
+
+    if(croad1.pos % 5 == 0)
+    {
+        croad1.set_random();
+        croad1.day++;
+    }
+
+    if(croad1.day == 5)
+         croad1.day = 1;
+
     do{
         ClearScreen();
 
@@ -229,6 +265,7 @@ void c_road_sect_1(Character road1, Day_info croad1, c_maps map1)
         map1.o = 1;
         map1.set_cordon_roads();
 
+        croad1.initial_stats();
         croad1.show_day_ui();
 
         map1.show_roads();
@@ -259,6 +296,16 @@ void c_road_sect_2(Character road2, Day_info croad2, c_maps map2)
 {
     std::string option;
 
+    croad2.pos++;
+
+    if(croad2.pos % 5 == 0)
+    {
+        croad2.set_random();
+        croad2.day++;
+    }
+    if(croad2.day == 5)
+         croad2.day = 1;
+
     do{
         ClearScreen();
 
@@ -267,6 +314,7 @@ void c_road_sect_2(Character road2, Day_info croad2, c_maps map2)
         map2.o = 2;
         map2.set_cordon_roads();
 
+        croad2.initial_stats();
         croad2.show_day_ui();
 
         map2.show_roads();
@@ -297,6 +345,16 @@ void c_road_sect_3(Character road3, Day_info croad3, c_maps map3)
 {
     std::string option;
 
+    croad3.pos++;
+
+    if(croad3.pos % 5 == 0)
+    {
+        croad3.set_random();
+        croad3.day++;
+    }
+    if(croad3.day == 5)
+         croad3.day = 1;
+
     do{
         ClearScreen();
 
@@ -305,6 +363,7 @@ void c_road_sect_3(Character road3, Day_info croad3, c_maps map3)
         map3.o = 3;
         map3.set_cordon_roads();
 
+        croad3.initial_stats();
         croad3.show_day_ui();
 
         map3.show_roads();
@@ -335,6 +394,16 @@ void c_road_sect_4(Character road4, Day_info croad4,c_maps map4)
 {
     std::string option;
 
+    croad4.pos++;
+
+    if(croad4.pos % 5 == 0)
+    {
+        croad4.set_random();
+        croad4.day++;
+    }
+    if(croad4.day == 5)
+         croad4.day = 1;
+
     do{
         ClearScreen();
 
@@ -343,7 +412,9 @@ void c_road_sect_4(Character road4, Day_info croad4,c_maps map4)
         map4.o = 4;
         map4.set_cordon_roads();
 
+        croad4.initial_stats();
         croad4.show_day_ui();
+
         map4.show_roads();
 
         for(int i=0;i<4;i++) { std::cout << "\n"; };
@@ -372,6 +443,16 @@ void c_lane1(Character lane1, Day_info clane1,c_maps c_l1)
 {
     std::string option;
 
+    clane1.pos++;
+
+    if(clane1.pos % 5 == 0)
+    {
+        clane1.set_random();
+        clane1.day++;
+    }
+    if(clane1.day == 5)
+         clane1.day = 1;
+
     do{
         ClearScreen();
 
@@ -380,7 +461,9 @@ void c_lane1(Character lane1, Day_info clane1,c_maps c_l1)
         c_l1.o = 7;
         c_l1.set_cordon_roads();
 
+        clane1.initial_stats();
         clane1.show_day_ui();
+
         c_l1.show_roads();
 
         for(int i=0;i<4;i++) { std::cout << "\n"; };
@@ -409,6 +492,16 @@ void c_warehouse(Character c_ware, Day_info c_warehouse , c_maps c_w)
 {
     std::string option;
 
+    c_warehouse.pos++;
+
+    if(c_warehouse.pos % 5 == 0)
+    {
+        c_warehouse.set_random();
+        c_warehouse.day++;
+    }
+    if(c_warehouse.day == 5)
+         c_warehouse.day = 1;
+
     do{
         ClearScreen();
 
@@ -417,6 +510,7 @@ void c_warehouse(Character c_ware, Day_info c_warehouse , c_maps c_w)
         c_w.o = 8;
         c_w.set_cordon_roads();
 
+        c_warehouse.initial_stats();
         c_warehouse.show_day_ui();
         c_w.show_roads();
 
@@ -446,6 +540,16 @@ void c_bridge(Character cbridge, Day_info c_bridge, c_maps mbridge)
 {
     std::string option;
 
+    c_bridge.pos++;
+
+    if(c_bridge.pos % 5 == 0)
+    {
+        c_bridge.set_random();
+
+    }
+    if(c_bridge.day == 5)
+         c_bridge.day = 1;
+
     do{
         ClearScreen();
 
@@ -454,6 +558,7 @@ void c_bridge(Character cbridge, Day_info c_bridge, c_maps mbridge)
         mbridge.o = 9;
         mbridge.set_cordon_roads();
 
+        c_bridge.initial_stats();
         c_bridge.show_day_ui();
 
         mbridge.show_roads();

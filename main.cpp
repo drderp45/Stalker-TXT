@@ -8,7 +8,7 @@
 #include "declarations.h"
 
 #include "Character_Stats.h"
-#include "Day_Stats.h"
+#include "Day_Info.h"
 #include "Cordon_map.h"
 
 void logo();
@@ -37,10 +37,11 @@ int main(int argc, char *argv[])
         test.initial_stats();
 
         Day_info burp;
-        burp.initial_stats();
+        burp.random = 1;
+        burp.pos = 1;
+        burp.day = 1;
 
         c_maps c_map;
-
         ClearScreen();
 
         Cordon(test,burp,c_map); // Starting place
